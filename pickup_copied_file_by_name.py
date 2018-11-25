@@ -51,13 +51,14 @@ if __name__ == '__main__':
     dir_target = args.arg1
     path_dir_target = Path(dir_target)
 
+    # default extensions
     extensions_tagert = [
         "jpeg",
         "JPG",
         "RAF"
     ]
 
-    extensions_tagert.extend(args.extension_list)
+    extensions_tagert = args.extension_list
 
     for n in listup_dup(path_dir_target, extensions_tagert, args.debug):
         print(n)

@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     extensions_tagert = args.extension_list
 
-    for n in listup_dup(path_dir_target, extensions_tagert, args.debug):
+    for n in listup_dup(path_dir_target, extensions_tagert, args.recursive):
         print(n)
 
 

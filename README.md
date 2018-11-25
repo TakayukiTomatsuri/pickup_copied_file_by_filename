@@ -55,9 +55,10 @@ optional arguments:
 
 ```
 
-リストアップさせて削除
+リストアップさせて削除  
+(名前に空白を含むファイルは、そこで区切られてしまうので、`tr`コマンドや`xargs`の`-x0`オプションを使ったりしている)  
 
 ```
 $ python3 pickup_copied_file_by_name.py ~/picture/ > rmvlist.txt  
-$ cat rmvlist.txt | xargs -n1 sh -c 'rm "$0"'
+$ cat rmvlist.txt | tr "\n" "\0" | xargs -x0 -n1 sh -c 'rm "$0"'
 ```

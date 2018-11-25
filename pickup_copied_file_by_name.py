@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 
 from pathlib import Path
 import argparse
@@ -7,7 +8,7 @@ import os
 import re
 
 def listup_dup(path, target_extensions, do_recursive):
-    target_extensions_regexp = [(".*" + item + "$") for item in target_extensions]
+    target_extensions_regexp = [(".*\." + item + "$") for item in target_extensions]
     # insensiteve case
     p_search_extension = re.compile("|".join(target_extensions_regexp), re.IGNORECASE)
 
